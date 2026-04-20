@@ -69,7 +69,7 @@ def create_question(operation):
 # ending the function call and returning the results        
     return(question_text, question_answer)
 
-# Creating a function called check_answer with parameters guess and answer
+# creating a function called check_answer with parameters guess and answer
 def check_answer(guess, answer):
     answer = float(format((answer),',.2f'))
     if(guess == answer):
@@ -77,30 +77,46 @@ def check_answer(guess, answer):
     else:
         return False
     
-# Creating a function called get_response with parameter is_correct
+# creating a function called get_response with parameter is_correct
 def get_response(is_correct):
     if(is_correct == True):
         return("\nCorrect, good work!")
     if(is_correct == False):
         return("\nIncorrect, please try again!")
     
-# Creating a function main that will group all functions    
+# creating a function main that will group all functions    
+  
 def main():
     operation = get_operation()
-    (question, answer) = create_question(operation)
+
     if operation == -1:
-      return
+        return
+
+    question, answer = create_question(operation)
+
     print(question)
-    guess = float(input("Enter your answer:"))
-    is_correct = check_answer(guess, answer)
-    print(get_response(is_correct))
-    while(is_correct == False):
-        guess = float(input("Enter your answer:"))
+
+    is_correct = False
+
+    while not is_correct:
+        user_input = input("Enter your answer (or 'q' to quit): ")
+
+        if user_input.lower() in ("q", "quit", "exit"):
+            print("Goodbye!")
+            return
+
+        try:
+            guess = float(user_input)
+        except ValueError:
+            print("Please enter a number or 'q' to quit.")
+            continue
+
         is_correct = check_answer(guess, answer)
         print(get_response(is_correct))
-    if(is_correct == True):
-        main()
+
+    # restart game after correct answer
+    main()
     
-            
-# Calling the main function
+
+# calling the main function
 main()
