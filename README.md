@@ -41,6 +41,7 @@ After selecting an operation, the program generates a math question. The user mu
 ## 🖥️ Example Session
 
 ```
+
 1 = addition
 2 = subtraction
 3 = multiplication
@@ -48,20 +49,39 @@ After selecting an operation, the program generates a math question. The user mu
 
 Enter the operation (1 to 4) or -1 to exit: 1
 
-How much is 11 + 11?
-Enter your answer: 22
+How much is 10 + 13?
+Enter your answer (or 'q' to quit): 23
+
+Correct, good work!
+
+```
+```
+1 = addition
+2 = subtraction
+3 = multiplication
+4 = division 
+
+Enter the operation (1 to 4) or -1 to exit: 2
+
+How much is 11 - 13?
+Enter your answer (or 'q' to quit): -2
 
 Correct, good work!
 ```
+ ```
+1 = addition
+2 = subtraction
+3 = multiplication
+4 = division 
 
-```
-Enter the operation (1 to 4) or -1 to exit: 4
+Enter the operation (1 to 4) or -1 to exit: 3
 
-How much is 15 / 18?
-Enter your answer: 1
+How much is 6 * 19?
+Enter your answer (or 'q' to quit): 1
 
 Incorrect, please try again!
-Enter your answer:
+Enter your answer (or 'q' to quit): q
+Goodbye!
 ```
 
 ---
